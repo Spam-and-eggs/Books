@@ -619,7 +619,7 @@ footer .btn-row {
  .sounds-hero {
     padding: 72px 0 40px;
     text-align: center;
-    border-bottom: 6px solid var(--spam-red);
+    border-bottom: 2px solid var(--spam-red);
   }
   .sounds-hero h1 {
     font-size: clamp(2.2rem, 6vw, 4rem);
