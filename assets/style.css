@@ -617,7 +617,7 @@ footer .btn-row {
     border-bottom: 2px solid var(--spam-red);
   }
   .sounds-hero h1 {
-    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     color: var(--yolk-gold);
   }
   .sounds-hero p {
