@@ -81,7 +81,7 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-bottom: 6px solid var(--spam-red);
+  border-bottom: 2px solid var(--spam-red);
 }
 
 .hero video {
