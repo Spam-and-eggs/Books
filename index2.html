@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spam and Eggs — A Very Serious Morning</title>
+<meta name="description" content="Five breakfast items. One very serious morning. Nobody makes it to lunch. A darkly funny illustrated audiobook by Arge Barn.">
+<meta property="og:title" content="Spam and Eggs — A Very Serious Morning">
+<meta property="og:description" content="Five breakfast items. One very serious morning. Nobody makes it to lunch.">
+<meta property="og:image" content="assets/images/cover.jpg">
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-512x512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <video autoplay muted loop playsinline poster="assets/images/cover.jpg" id="hero-video">
+    <source src="assets/video/hero-bond.mp4" type="video/mp4">
+  </video>
+  <script>
+    // Each hero clip paired with its matching voice line.
+    // Add a real audioSrc for the others as you get clips recorded —
+    // until then they fall back to the default voice-line.mp3.
+    var HERO_CLIPS = [
+      { video: 'assets/video/hero-bond.mp4',              audio: 'assets/audio/voice-line.mp3' },
+      { video: 'assets/video/hero-brownsauce.mp4',         audio: 'assets/audio/voice-line2.mp3' },
+      { video: 'assets/video/hero-spam-streetfighter.mp4', audio: 'assets/audio/voice-line3.mp3' },
+      { video: 'assets/video/hero-toast-crazy.mp4',        audio: 'assets/audio/voice-line4.mp3' },
+      { video: 'assets/video/hero-butter-angry.mp4',        audio: 'assets/audio/voice-line5.mp3' }
+    ];
+    var CURRENT_HERO = HERO_CLIPS[Math.floor(Math.random() * HERO_CLIPS.length)];
+
+    (function () {
+      var vid = document.getElementById('hero-video');
+      vid.querySelector('source').src = CURRENT_HERO.video;
+      vid.load();
+    })();
+  </script>
+  <div class="hero-content">
+    <div class="torn-banner">
+      <h1>Spam<br>and Eggs</h1>
+    </div>
+    <p class="hero-sub">A Very Serious Morning</p>
+    <p class="hero-tagline">Five breakfast items. One very serious morning. Nobody makes it to lunch.</p>
+    <div class="cta-row">
+       <a class="btn btn-primary" href="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-amazon" target="_blank" rel="noopener">Pre-order on Amazon</a>
+      <a class="btn btn-primary" href="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk" target="_blank" rel="noopener">Listen on Spotify</a>
+      <!-- TODO: paste your actual TuneIn show URL below in place of "#" -->
+      <a class="btn btn-outline" href="http://tun.in/pyklT" target="_blank" rel="noopener">Listen on TuneIn</a>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll — if you dare</div>
+</section>
+
+<!-- ============ THE STORY ============ -->
+<section id="story">
+  <div class="wrap blurb">
+    <p class="eyebrow">The Story</p>
+    <div style="height:14px"></div>
+    <p>Meet Agent Spam — mysterious, mustached, and fostered in the Scottish Highlands by two well-meaning bottles of ketchup. Meet Private Eggs — a deeply confident egg who insists he's "free range" and has never once, to anyone's knowledge, left Yorkshire. Add a cockney slice of toast with anger issues, an American bottle of brown sauce with a grudge against his own cousin, and one quietly furious pat of butter who has had enough of being forgotten.</p>
+    <p>Spam and Eggs: A Very Serious Morning is a darkly funny, deadpan illustrated tale about routine, denial, and the food chain — told with the straight-faced absurdity of a bloke down the pub who swears every word of it is true.</p>
+    <p>It probably isn't.</p>
+  </div>
+</section>
+
+<!-- ============ BY THE NUMBERS (signature element) ============ -->
+<section id="facts">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Serving Information</p>
+      <h2>Nutrition Facts</h2>
+    </div>
+    <div class="label-panel">
+      <div class="label-title">Spam &amp; Eggs</div>
+      <div class="label-row"><span>Servings per container</span><span class="val">5 characters</span></div>
+      <div class="label-row thick"><span>Serving size</span><span class="val">1 very serious morning</span></div>
+      <div class="label-row bold"><span>Total Absurdity</span><span class="val">100%</span></div>
+      <div class="label-row"><span>Total Denial</span><span class="val">47%</span></div>
+      <div class="label-row indent"><span>of which, self-inflicted</span><span class="val">41%</span></div>
+      <div class="label-row"><span>Protein (Spam content)</span><span class="val">22g</span></div>
+      <div class="label-row"><span>Prerogatives asserted</span><span class="val">6</span></div>
+      <div class="label-row"><span>Running gags</span><span class="val">12</span></div>
+      <div class="label-row"><span>Characters who make it to lunch</span><span class="val">0</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEET THE CAST ============ -->
+<section id="cast">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Personnel Files</p>
+      <h2>Meet the Cast</h2>
+    </div>
+    <div class="cast-grid">
+
+      <div class="dossier" data-char="spam">
+        <div class="dossier-photo"><img src="assets/images/spam-plate.jpg" alt="Agent Spam"></div>
+        <div class="dossier-body">
+          <div class="dossier-name">Agent Spam</div>
+          <div class="dossier-status">Status: Incognito</div>
+          <p class="dossier-bio">Fostered in the Scottish Highlands by two well-meaning bottles of ketchup. Officially, nobody knows what he did before the tin.</p>
+          <p class="dossier-quote">"A less salty mission, today."</p>
+        </div>
+      </div>
+
+      <div class="dossier" data-char="eggs">
+        <div class="dossier-photo"><img src="assets/images/eggs.jpg" alt="Private Eggs"></div>
+        <div class="dossier-body">
+          <div class="dossier-name">Private Eggs</div>
+          <div class="dossier-status">Status: Active, technically</div>
+          <p class="dossier-bio">Deeply confident. Insists he's free range. Has never once, to anyone's knowledge, left Yorkshire.</p>
+          <p class="dossier-quote">"Eggs does not stress, mon ami."</p>
+        </div>
+      </div>
+
+      <div class="dossier" data-char="brownsauce">
+        <div class="dossier-photo"><img src="assets/images/brownsauce.jpg" alt="Dr. Brown Sauce"></div>
+        <div class="dossier-body">
+          <div class="dossier-name">Dr. Brown Sauce</div>
+          <div class="dossier-status">Status: Dead centre, always</div>
+          <p class="dossier-bio">Thick and heavy — not at all like his cousin A1, a distant, should-be-forgotten diner regular.</p>
+          <p class="dossier-quote">"That's my prerogative."</p>
+        </div>
+      </div>
+
+      <div class="dossier" data-char="toast">
+        <div class="dossier-photo">
+          <div class="redacted-photo"><span class="redacted-stamp">Image Withheld</span></div>
+        </div>
+        <div class="dossier-body">
+          <div class="dossier-name">Toast</div>
+          <div class="dossier-status">Status: Local heavy</div>
+          <p class="dossier-bio">Nobody has ever seen him arrive. He simply pre-exists each morning, same as taxes.</p>
+          <p class="dossier-quote">"Oi oi, saveloy!"</p>
+        </div>
+      </div>
+
+      <div class="dossier" data-char="butter">
+        <div class="dossier-photo">
+          <div class="redacted-photo"><span class="redacted-stamp">Image Withheld</span></div>
+        </div>
+        <div class="dossier-body">
+          <div class="dossier-name">Miss Butter</div>
+          <div class="dossier-status">Status: Overlooked</div>
+          <p class="dossier-bio">Constantly left at the supermarket. Never once, in this kitchen or any kitchen, asked her opinion.</p>
+          <p class="dossier-quote">"I'll show them."</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============ WANT MORE? (single interest vote) ============ -->
+    <div id="bonus-wrap">
+      <div class="bonus-lock" id="bonus-lock">
+        <p class="eyebrow">Fancy a Second Helping?</p>
+        <p class="bonus-progress">There's more where that came from — characters mentioned but never shown, and maybe a whole second book. Tell us you want it.</p>
+        <button class="btn btn-primary" id="want-more-btn">🤍 Yes, I Want More</button>
+      </div>
+
+      <div class="bonus-revealed" id="bonus-revealed" hidden>
+        <p class="eyebrow" style="text-align:center;">Declassified</p>
+        <div class="cast-grid bonus-grid">
+          <div class="dossier">
+            <div class="dossier-photo">
+              <div class="redacted-photo"><span class="redacted-stamp">Never Rendered</span></div>
+            </div>
+            <div class="dossier-body">
+              <div class="dossier-name">A1</div>
+              <div class="dossier-status">Status: Distant, should-be-forgotten</div>
+              <p class="dossier-bio">Brown Sauce's cousin. Last heard doing steak-night specials at some roadside diner outside Nevada. Selling himself cheap.</p>
+              <p class="dossier-quote">"Another day, another dollar-less."</p>
+            </div>
+          </div>
+
+          <div class="dossier">
+            <div class="dossier-photo">
+              <div class="redacted-photo"><span class="redacted-stamp">Never Rendered</span></div>
+            </div>
+            <div class="dossier-body">
+              <div class="dossier-name">The Tomato Brothers</div>
+              <div class="dossier-status">Status: Unspecified, plural</div>
+              <p class="dossier-bio">Referenced once, feared thereafter. Whatever they did to Brown Sauce, he's still not over it.</p>
+              <p class="dossier-quote">"Do I look British?"</p>
+            </div>
+          </div>
+
+          <div class="dossier">
+            <div class="dossier-photo">
+              <div class="redacted-photo"><span class="redacted-stamp">Never Rendered</span></div>
+            </div>
+            <div class="dossier-body">
+              <div class="dossier-name">Margarine</div>
+              <div class="dossier-status">Status: Nemesis</div>
+              <p class="dossier-bio">Butter's rival, forever trying to bring her down. Not pure. Not welcome.</p>
+              <p class="dossier-quote">"Constantly left at the supermarket, and rightly so."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="next-book-tease">
+          <p class="eyebrow">In Development</p>
+          <h3>Book Two</h3>
+          <p>Same kitchen, same dark logic, a different shift on the counter. Nothing's confirmed. Nothing's off the table.</p>
+         <p class="submit-line">Got a character idea? A cursed condiment, a doomed leftover, a fridge-door regular with a grudge — send it in.</p>
+          <form id="character-form" class="character-form">
+            <input type="hidden" name="access_key" value="7efdcd7e-b94a-46bc-9484-2217c2d4e376">
+            <input type="hidden" name="subject" value="New character idea for Spam and Eggs">
+
+            <input type="text" name="name" placeholder="Your name (optional)" autocomplete="off">
+            <input type="email" name="email" placeholder="Your email (optional, only if you want a reply)" autocomplete="off">
+            <textarea name="message" placeholder="Your character idea..." required rows="3"></textarea>
+  <!-- Honeypot: Web3Forms' own convention — real visitors never see or check
+                 this box, bots that auto-fill every field usually do. -->
+            <input type="checkbox" name="botcheck" class="hidden-field" style="display:none" tabindex="-1" autocomplete="off">
+
+            <button type="submit" class="btn btn-outline">Send it in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Thank-you dialog, shown immediately on successful submission -->
+    <div id="thanks-overlay" class="thanks-overlay" hidden>
+      <div class="thanks-box">
+        <p class="eyebrow">Filed &amp; Noted</p>
+        <h3>Thanks for the idea</h3>
+        <p>It's in the pile with everything else that "probably isn't" true. Appreciated.</p>
+        <button class="btn btn-primary" id="thanks-close">Close</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ LISTEN ============ -->
+<section id="listen">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Sample</p>
+      <h2>Have a Listen</h2>
+    </div>
+    <div class="listen-panel">
+      <p>The kitchen scene — where everyone finally meets round the table.</p>
+      <audio controls preload="none">
+        <source src="assets/audio/sample.mp3" type="audio/mpeg">
+        Your browser doesn't support embedded audio — grab the full show on Spotify instead.
+      </audio>
+      <p class="small">Full audiobook — multi-voice, ~15 minutes</p>
+      <div class="cta-row" style="margin-top:10px;">
+         <a class="btn btn-primary" href="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-amazon" target="_blank" rel="noopener">Pre-order on Amazon</a>
+        <a class="btn btn-primary" href="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk" target="_blank" rel="noopener">Full show on Spotify</a>
+        <a class="btn btn-outline" href="http://tun.in/pyklT" target="_blank" rel="noopener">Full show on TuneIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WATCH ============ -->
+<section id="watch">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Field Footage</p>
+      <h2>Watch the Teaser</h2>
+    </div>
+    <div class="watch-wrap">
+      <div class="phone-frame">
+        <video controls playsinline poster="assets/images/cover.jpg">
+          <source src="assets/video/teaser.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap about-panel">
+    <p class="eyebrow">Declassified</p>
+    <div style="height:14px"></div>
+    <p class="about-name">Arge Barn</p>
+    <p>Arge Barn is a first-time author who insists this book is a true story. It isn't. He spent years running his own design & ideas company whilst writing a few design columns for magazines back in England — which explains a lot, and nothing. He lives somewhere between the Highlands and the East End, which may explain a few things about his narrator and the Shady-loo way.</p>
+    <p style="font-style:italic; color:var(--yolk-gold);">This is his first book. He regrets nothing.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="btn-row">
+       <a class="btn btn-primary" href="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-amazon" target="_blank" rel="noopener">Pre-order on Amazon</a>
+      <a class="btn btn-primary" href="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk" target="_blank" rel="noopener">Spotify</a>
+      <a class="btn btn-outline" href="http://tun.in/pyklT" target="_blank" rel="noopener">TuneIn</a>
+    </div>
+    </div>
+    <p class="sponsor-line">Spam and Eggs is proudly sponsored by <a href="https://argefaber.github.io/Lanthanides-THULIUM/" target="_blank" rel="noopener">Lanthanides (THULIUM)</a></p>
+    <p class="copyright">© 2026 Arge Barn. All rights reserved.</p>
+  <p></p><a class="btn btn-outline" href="sounds.html">🔊 Sounds of a British Breakfast</a></p>
+  </div>
+</footer>
+
+<!-- Voice line: click to hear whichever character's hero video is playing -->
+<button id="voice-trigger" aria-label="Play a voice line">🔊 Hear them</button>
+<audio id="voice-line" preload="auto"></audio>
+
+<script>
+  (function () {
+    var btn = document.getElementById('voice-trigger');
+    var voiceLine = document.getElementById('voice-line');
+    voiceLine.src = CURRENT_HERO.audio;
+    btn.addEventListener('click', function () {
+      voiceLine.currentTime = 0;
+      voiceLine.play();
+    });
+  })();
+</script>
+
+<!-- "Want more?" reveal -->
+<script>
+  (function () {
+    var STORAGE_KEY = 'spamAndEggsWantsMore';
+    var btn = document.getElementById('want-more-btn');
+    var lock = document.getElementById('bonus-lock');
+    var revealed = document.getElementById('bonus-revealed');
+
+    function reveal() {
+      lock.hidden = true;
+      revealed.hidden = false;
+    }
+
+    if (localStorage.getItem(STORAGE_KEY) === 'yes') {
+      reveal();
+    }
+
+    btn.addEventListener('click', function () {
+      localStorage.setItem(STORAGE_KEY, 'yes');
+      reveal();
+    });
+  })();
+</script>
+
+  <!-- Character submission form: Web3Forms AJAX submit, thank-you modal on success -->
+<script>
+  (function () {
+    var form = document.getElementById('character-form');
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var overlay = document.getElementById('thanks-overlay');
+    var closeBtn = document.getElementById('thanks-close');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      var originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        var response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        var data = await response.json();
+
+        if (response.ok) {
+          form.reset();
+          overlay.hidden = false;
+        } else {
+          alert('Error: ' + (data.message || 'something went wrong, try again.'));
+        }
+      } catch (err) {
+        alert('Something went wrong. Please try again.');
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+
+    closeBtn.addEventListener('click', function () {
+      overlay.hidden = true;
+    });
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) overlay.hidden = true;
+    });
+  })();
+</script>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7Y0K61TK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-L7Y0K61TK4');
+</script>
+
+</body>
+</html>
