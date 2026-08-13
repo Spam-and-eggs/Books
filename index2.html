@@ -262,12 +262,13 @@
       </audio>
       <p class="small">Full audiobook — multi-voice, ~15 minutes</p>
       <div class="cta-row" style="margin-bottom:10px;">
-        <a class="btn btn-primary" href="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-spotify" target="_blank" rel="noopener">Full show on Spotify</a>
-        <a class="btn btn-outline" href="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-tunein" target="_blank" rel="noopener">Full show on TuneIn</a>
-      </div> <div class="cta-row" style="margin-top:10px;">
-        <a class="btn btn-primary" href="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-spotify" target="_blank" rel="noopener">Full show on Spotify</a>
-        <a class="btn btn-outline" href="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-tunein" target="_blank" rel="noopener">Full show on TuneIn</a>
-      </div>
+      <select class="platform-select" id="utmDropdown" onchange="openUTMLink(this.value)">
+        <option value="">Choose a platform to listen now..</option>
+        <option value="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-amazon">Amazon</option>
+        <option value="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-spotify">Spotify</option>
+        <option value="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-tunein">TuneIn</option>
+      </select>
+    </div>
 
     </div>
   </div>
@@ -304,11 +305,13 @@
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
-    <div class="btn-row" style="margin-bottom:10px;">
-      <a class="btn btn-primary" href="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=footer-amazon" target="_blank" rel="noopener">Amazon</a>
-      <a class="btn btn-primary" href="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=footer-spotify" target="_blank" rel="noopener">Spotify</a>
-      <a class="btn btn-outline" href="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=footer-tunein" target="_blank" rel="noopener">TuneIn</a>
-      <a class="btn btn-outline" href="sounds.html">🔊 Sounds of a British Breakfast</a>
+    <div class="cta-row" style="margin-bottom:10px;">
+      <select class="platform-select" id="utmDropdown" onchange="openUTMLink(this.value)">
+        <option value="">Choose a platform to listen now..</option>
+        <option value="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=footer-amazon">Amazon</option>
+        <option value="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=footer-spotify">Spotify</option>
+        <option value="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=footer-tunein">TuneIn</option>
+      </select>
     </div>
     </div>
     <p class="sponsor-line">Spam and Eggs is proudly sponsored by <a href="https://argefaber.github.io/Lanthanides-THULIUM/" target="_blank" rel="noopener">Lanthanides (THULIUM)</a></p>
