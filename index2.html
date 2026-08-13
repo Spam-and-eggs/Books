@@ -53,6 +53,23 @@
       <a class="btn btn-primary" href="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk" target="_blank" rel="noopener">Listen on Spotify</a>
       <!-- TODO: paste your actual TuneIn show URL below in place of "#" -->
       <a class="btn btn-outline" href="http://tun.in/pyklT" target="_blank" rel="noopener">Listen on TuneIn</a>
+
+      <select class="cta-row" id="utmDropdown" onchange="openUTMLink(this.value)">
+  <option value="">Choose your platform to listen now..</option>
+  <option value="https://example.com">Spring Sale</option>
+  <option value="http://tun.in/pyklT">TuneIn</option>
+</select>
+
+<script>
+  function openUTMLink(url) {
+    if (url) {
+      window.open(url, '_blank');
+      
+      // Optional: Reset the dropdown to the placeholder option after clicking
+      document.getElementById('utmDropdown').value = "";
+    }
+  }
+</script>
     </div>
   </div>
   <div class="scroll-cue">Scroll — if you dare</div>
