@@ -192,6 +192,15 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
+.platform-select:hover {
+  background-color: #e0203f;
+}
+
+.platform-select:focus-visible {
+  outline: 3px solid var(--yolk-gold);
+  outline-offset: 3px;
+}
+
 .dropdown-chevron {
   position: absolute;
   right: 22px;
