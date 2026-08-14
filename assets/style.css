@@ -200,7 +200,7 @@ h1, h2, h3 {
 
 .platform-select option {
   background: var(--bg-panel);
-  color: var(--cream);
+  color: var(--black);
 }
 
 .select-chevron {
