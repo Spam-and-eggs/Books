@@ -84,6 +84,13 @@ h1, h2, h3 {
   border-bottom: 2px solid var(--spam-red);
 }
 
+.hero-fallback {
+  position: absolute;
+  inset: 0;
+  background: url("assets/images/hero-fallback.jpg") center center / cover no-repeat;
+  z-index: 0;
+}
+
 .hero video {
   position: absolute;
   inset: 0;
@@ -92,6 +99,7 @@ h1, h2, h3 {
   object-fit: cover;
   opacity: 0.42;
   filter: grayscale(0.15) contrast(1.05);
+  z-index: 1;
 }
 
 .hero::after {
