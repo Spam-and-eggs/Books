@@ -57,24 +57,18 @@
     <option value="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-tunein">TuneIn</option>
   </select>
 </div>
-
-
-
-
-
-    
 <div class="cta-row">
-  <div class="select-wrapper" id="utmSelectWrapper">
-    <select class="platform-select" id="utmDropdown" onchange="openUTMLink(this.value)">
-      <option value="">Choose a platform to listen now...</option>
-      <option value="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-amazon">Amazon</option>
-      <option value="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-spotify">Spotify</option>
-      <option value="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-tunein">TuneIn</option>
-    </select>
+      <div class="select-wrap">
+        <select class="platform-select" id="utmDropdown" onchange="openUTMLink(this.value)">
+          <option value="">Choose a platform to listen now..</option>
+          <option value="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-amazon">Amazon</option>
+          <option value="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-spotify">Spotify</option>
+          <option value="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-tunein">TuneIn</option>
+        </select>
+        <span class="select-chevron"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4"/></svg></span>
+      </div>
+    </div>
 
-    <span class="dropdown-chevron"></span>
-  </div>
-</div>
     <script>
       function openUTMLink(url) {
         if (url) {
@@ -83,27 +77,6 @@
         }
       }
     </script>
-<script>
-  const utmDropdown = document.getElementById('utmDropdown');
-  const utmSelectWrapper = document.getElementById('utmSelectWrapper');
-
-  utmDropdown.addEventListener('mousedown', function () {
-    utmSelectWrapper.classList.add('dropdown-open');
-  });
-
-  utmDropdown.addEventListener('touchstart', function () {
-    utmSelectWrapper.classList.add('dropdown-open');
-  });
-
-  utmDropdown.addEventListener('change', function () {
-    utmSelectWrapper.classList.remove('dropdown-open');
-  });
-
-  utmDropdown.addEventListener('blur', function () {
-    utmSelectWrapper.classList.remove('dropdown-open');
-  });
-</script>
-  </div>
   <div class="scroll-cue">Scroll — if you dare</div>
 </section>
 
