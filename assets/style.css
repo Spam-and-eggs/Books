@@ -175,7 +175,7 @@ h1, h2, h3 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 100%;
+  width: 50%;
   box-sizing: border-box;
   background-color: var(--spam-red);
   color: var(--cream);
@@ -186,10 +186,9 @@ h1, h2, h3 {
   letter-spacing: 0.06em;
   font-size: 14px;
   font-weight: 600;
-
   padding: 14px 52px 14px 26px;
-
   cursor: pointer;
+  transition: background-color 0.15s ease;
 }
 
 .platform-select:hover {
