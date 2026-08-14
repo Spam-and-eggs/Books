@@ -169,47 +169,48 @@ h1, h2, h3 {
 
 .select-wrapper {
   position: relative;
-   display: inline-block;
+  width: 100%;
 }
 
 .platform-select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+  width: 100%;
   box-sizing: border-box;
+
   background-color: var(--spam-red);
   color: var(--cream);
+
   border: 2px solid transparent;
   border-radius: 3px;
+
   font-family: var(--mono);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: 14px;
   font-weight: 600;
-  padding: 14px 45px 14px 26px;
+
+  padding: 14px 52px 14px 26px;
+
   cursor: pointer;
-  transition: background-color 0.15s ease;
-}
-
-.platform-select:hover {
-  background-color: #e0203f;
-}
-
-.platform-select:focus-visible {
-  outline: 3px solid var(--yolk-gold);
-  outline-offset: 3px;
 }
 
 .dropdown-chevron {
   position: absolute;
   right: 22px;
   top: 50%;
+
   width: 8px;
   height: 8px;
+
   border-right: 2px solid var(--cream);
   border-bottom: 2px solid var(--cream);
+
   transform: translateY(-70%) rotate(45deg);
   transition: transform 0.2s ease;
+
   pointer-events: none;
 }
 
@@ -217,7 +218,6 @@ h1, h2, h3 {
 .select-wrapper.dropdown-open .dropdown-chevron {
   transform: translateY(-30%) rotate(225deg);
 }
-
 .scroll-cue {
   position: absolute;
   bottom: 26px;
