@@ -166,9 +166,12 @@ h1, h2, h3 {
 
 .btn-outline { background: transparent; color: var(--yolk-gold); border-color: var(--yolk-gold); }
 .btn-outline:hover { background: rgba(240,173,31,0.1); }
+
 .select-wrapper {
   position: relative;
-  width: 60%;
+   display: inline-block;
+   width: clamp(260px, 35vw, 360px);
+   max-width: 100%;
 }
 
 .platform-select {
