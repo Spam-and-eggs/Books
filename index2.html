@@ -68,6 +68,27 @@
         }
       }
     </script>
+
+    <script>
+  const utmDropdown = document.getElementById('utmDropdown');
+  const utmSelectWrapper = document.getElementById('utmSelectWrapper');
+
+  utmDropdown.addEventListener('mousedown', function () {
+    utmSelectWrapper.classList.add('dropdown-open');
+  });
+
+  utmDropdown.addEventListener('touchstart', function () {
+    utmSelectWrapper.classList.add('dropdown-open');
+  });
+
+  utmDropdown.addEventListener('change', function () {
+    utmSelectWrapper.classList.remove('dropdown-open');
+  });
+
+  utmDropdown.addEventListener('blur', function () {
+    utmSelectWrapper.classList.remove('dropdown-open');
+  });
+</script>
   </div>
   <div class="scroll-cue">Scroll — if you dare</div>
 </section>
