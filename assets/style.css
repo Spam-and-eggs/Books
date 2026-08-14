@@ -746,7 +746,17 @@ footer .btn-row {
 @media (max-width: 640px) {
   section { padding: 64px 0; }
   .dossier-photo { aspect-ratio: 16/10; }
+     .select-wrap {
+    width: 100%;
+    max-width: calc(100vw - 48px);
+  }
+     .platform-select {
+    width: 100%;
+    max-width: 100%;
+  }
 }
+
+
 
 
 
