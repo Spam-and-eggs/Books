@@ -168,14 +168,15 @@ h1, h2, h3 {
 .btn-outline:hover { background: rgba(240,173,31,0.1); }
 .select-wrapper {
   position: relative;
-  width: 100%;
+  width: clamp(260px, 35vw, 360px);
+max-width: 100%;
 }
 
 .platform-select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 50%;
+  width: 1000%;
   box-sizing: border-box;
   background-color: var(--spam-red);
   color: var(--cream);
