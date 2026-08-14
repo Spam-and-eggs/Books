@@ -23,25 +23,62 @@
   <video autoplay muted loop playsinline poster="assets/images/cover.jpg" id="hero-video">
     <source src="assets/video/hero-bond.mp4" type="video/mp4">
   </video>
-  <script>
-    // Each hero clip paired with its matching voice line.
-    // Add a real audioSrc for the others as you get clips recorded —
-    // until then they fall back to the default voice-line.mp3.
-    var HERO_CLIPS = [
-      { video: 'assets/video/hero-bond.mp4',              audio: 'assets/audio/voice-line.mp3' },
-      { video: 'assets/video/hero-brownsauce.mp4',         audio: 'assets/audio/voice-line2.mp3' },
-      { video: 'assets/video/hero-spam-streetfighter.mp4', audio: 'assets/audio/voice-line3.mp3' },
-      { video: 'assets/video/hero-toast-crazy.mp4',        audio: 'assets/audio/voice-line4.mp3' },
-      { video: 'assets/video/hero-butter-angry.mp4',        audio: 'assets/audio/voice-line5.mp3' }
-    ];
-    var CURRENT_HERO = HERO_CLIPS[Math.floor(Math.random() * HERO_CLIPS.length)];
+<script>
+var HERO_CLIPS = [
+  {
+    video: 'assets/video/hero-bond.mp4',
+    audio: 'assets/audio/voice-line.mp3'
+  },
+  {
+    video: 'assets/video/hero-brownsauce.mp4',
+    audio: 'assets/audio/voice-line2.mp3'
+  },
+  {
+    video: 'assets/video/hero-spam-streetfighter.mp4',
+    audio: 'assets/audio/voice-line3.mp3'
+  },
+  {
+    video: 'assets/video/hero-toast-crazy.mp4',
+    audio: 'assets/audio/voice-line4.mp3'
+  },
+  {
+    video: 'assets/video/hero-butter-angry.mp4',
+    audio: 'assets/audio/voice-line5.mp3'
+  }
+];
 
-    (function () {
-      var vid = document.getElementById('hero-video');
-      vid.querySelector('source').src = CURRENT_HERO.video;
-      vid.load();
-    })();
-  </script>
+var CURRENT_HERO_INDEX = Math.floor(Math.random() * HERO_CLIPS.length);
+var CURRENT_HERO = HERO_CLIPS[CURRENT_HERO_INDEX];
+
+(function () {
+  var vid = document.getElementById('hero-video');
+
+  function loadHero(index) {
+    CURRENT_HERO_INDEX = index;
+    CURRENT_HERO = HERO_CLIPS[index];
+
+    vid.querySelector('source').src = CURRENT_HERO.video;
+    vid.load();
+
+    // If the voice audio element already exists, update it too
+    var voiceLine = document.getElementById('voice-line');
+    if (voiceLine) {
+      voiceLine.src = CURRENT_HERO.audio;
+    }
+
+    vid.play().catch(function () {});
+  }
+
+  // Load the randomly selected opening video
+  loadHero(CURRENT_HERO_INDEX);
+
+  // Change video every 7 seconds
+  setInterval(function () {
+    var nextIndex = (CURRENT_HERO_INDEX + 1) % HERO_CLIPS.length;
+    loadHero(nextIndex);
+  }, 7000);
+})();
+</script>
   <div class="hero-content">
     <div class="torn-banner">
       <h1>Spam<br>and Eggs</h1>
