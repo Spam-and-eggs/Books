@@ -168,8 +168,7 @@ h1, h2, h3 {
 .btn-outline:hover { background: rgba(240,173,31,0.1); }
 .select-wrapper {
   position: relative;
-  width: clamp(260px, 35vw, 360px);
-max-width: 100%;
+  width: 60%;
 }
 
 .platform-select {
