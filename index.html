@@ -61,6 +61,9 @@
         </select>
         <span class="select-chevron"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4"/></svg></span>
       </div>
+  <!-- Voice line: click to hear whichever character's hero video is playing -->
+<button id="voice-trigger" aria-label="Hear the character in the video">🔊 Hear this character</button>
+<audio id="voice-line" preload="auto"></audio>
     </div>
   </div>
     <script>
@@ -319,10 +322,6 @@
     <p class="copyright">© 2026 Arge Barn. All rights reserved.</p>
   </div>
 </footer>
-
-<!-- Voice line: click to hear whichever character's hero video is playing -->
-<button id="voice-trigger" aria-label="Play a voice line">🔊 Hear them</button>
-<audio id="voice-line" preload="auto"></audio>
 
 <script>
   (function () {
