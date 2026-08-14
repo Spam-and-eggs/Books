@@ -401,6 +401,14 @@ section {
   font-style: normal;
 }
 
+.bonus-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.bonus-grid .dossier-photo {
+  aspect-ratio: 4 / 3;
+}
+
 .bonus-grid .dossier-photo img {
   width: 100%;
   height: 100%;
