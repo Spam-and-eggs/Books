@@ -48,13 +48,30 @@
     </div>
     <p class="hero-sub">A Very Serious Morning</p>
     <p class="hero-tagline">Five breakfast items. One very serious morning. Nobody makes it to lunch.</p>
-    <div class="cta-row">
-       <a class="btn btn-primary" href="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-amazon" target="_blank" rel="noopener">Pre-order on Amazon</a>
-      <a class="btn btn-primary" href="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk" target="_blank" rel="noopener">Listen on Spotify</a>
-      <!-- TODO: paste your actual TuneIn show URL below in place of "#" -->
-      <a class="btn btn-outline" href="http://tun.in/pyklT" target="_blank" rel="noopener">Listen on TuneIn</a>
+<div class="cta-row">
+      <div class="select-wrap">
+        <select class="platform-select" id="utmDropdown" onchange="openUTMLink(this.value)">
+          <option value="">Chop Chop! Choice your poison...</option>
+          <option value="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-amazon">Amazon</option>
+          <option value="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-spotify">Spotify</option>
+          <option value="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-tunein">TuneIn</option>
+          <option value="https://www.everand.com/audiobook/1067543449/Spam-and-Eggs-A-Very-Serious-Morning?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-everand">Everand</option>
+          <option value="https://www.barnesandnoble.com/w/spam-and-eggs-arge-barn/1150907553?ean=2940205787413&utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-barnesandnoble">Barnes and Noble</option>
+          <option value="https://www.kobo.com/sg/en/audiobook/spam-and-eggs?srsltid=AfmBOoq4gtz3ccm7_G0ovE7n1J6raLAivi0LPg5ln81gW19ZzTFlpRWP?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-kobo">Kobo</option>
+        </select>
+        <span class="select-chevron"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4"/></svg></span>
+      </div>
     </div>
   </div>
+    <script>
+      function openUTMLink(url) {
+        if (url) {
+          window.open(url, '_blank');
+          document.getElementById('utmDropdown').value = "";
+        }
+      }
+    </script>
+
   <div class="scroll-cue">Scroll — if you dare</div>
 </section>
 
@@ -167,10 +184,8 @@
       <div class="bonus-revealed" id="bonus-revealed" hidden>
         <p class="eyebrow" style="text-align:center;">Declassified</p>
         <div class="cast-grid bonus-grid">
-          <div class="dossier">
-            <div class="dossier-photo">
-              <div class="redacted-photo"><span class="redacted-stamp">Never Rendered</span></div>
-            </div>
+          <div class="dossier" data-char="A1-busking">
+             <div class="dossier-photo"><img src="assets/images/A1-busking.jpg" alt="A1 sauce"></div>
             <div class="dossier-body">
               <div class="dossier-name">A1</div>
               <div class="dossier-status">Status: Distant, should-be-forgotten</div>
@@ -250,13 +265,22 @@
         Your browser doesn't support embedded audio — grab the full show on Spotify instead.
       </audio>
       <p class="small">Full audiobook — multi-voice, ~15 minutes</p>
-      <div class="cta-row" style="margin-top:10px;">
-         <a class="btn btn-primary" href="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-amazon" target="_blank" rel="noopener">Pre-order on Amazon</a>
-        <a class="btn btn-primary" href="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk" target="_blank" rel="noopener">Full show on Spotify</a>
-        <a class="btn btn-outline" href="http://tun.in/pyklT" target="_blank" rel="noopener">Full show on TuneIn</a>
+     <div class="cta-row" style="margin-bottom:10px;">
+      <div class="select-wrap">
+         <select class="platform-select" id="utmDropdown" onchange="openUTMLink(this.value)">
+          <option value="">Chop Chop! Choice your poison...</option>
+          <option value="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-amazon">Amazon</option>
+          <option value="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-spotify">Spotify</option>
+          <option value="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-tunein">TuneIn</option>
+          <option value="https://www.everand.com/audiobook/1067543449/Spam-and-Eggs-A-Very-Serious-Morning?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-everand">Everand</option>
+          <option value="https://www.barnesandnoble.com/w/spam-and-eggs-arge-barn/1150907553?ean=2940205787413&utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-barnesandnoble">Barnes and Noble</option>
+          <option value="https://www.kobo.com/sg/en/audiobook/spam-and-eggs?srsltid=AfmBOoq4gtz3ccm7_G0ovE7n1J6raLAivi0LPg5ln81gW19ZzTFlpRWP?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-kobo">Kobo</option>
+        </select>
+        <span class="select-chevron"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4"/></svg></span>
       </div>
     </div>
-  </div>
+ </div>
+    </div>
 </section>
 
 <!-- ============ WATCH ============ -->
@@ -290,15 +314,9 @@
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
-    <div class="btn-row">
-       <a class="btn btn-primary" href="https://www.amazon.com/author/arge.barn?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-amazon" target="_blank" rel="noopener">Pre-order on Amazon</a>
-      <a class="btn btn-primary" href="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk" target="_blank" rel="noopener">Spotify</a>
-      <a class="btn btn-outline" href="http://tun.in/pyklT" target="_blank" rel="noopener">TuneIn</a>
-    </div>
-    </div>
+    <p><a class="btn btn-outline" href="sounds.html">🔊 Sounds of a British Breakfast</a></p><br>
     <p class="sponsor-line">Spam and Eggs is proudly sponsored by <a href="https://argefaber.github.io/Lanthanides-THULIUM/" target="_blank" rel="noopener">Lanthanides (THULIUM)</a></p>
     <p class="copyright">© 2026 Arge Barn. All rights reserved.</p>
-  <p></p><a class="btn btn-outline" href="sounds.html">🔊 Sounds of a British Breakfast</a></p>
   </div>
 </footer>
 
