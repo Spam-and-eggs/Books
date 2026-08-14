@@ -176,7 +176,7 @@ h1, h2, h3 {
   -moz-appearance: none;
   appearance: none;
   background-color: var(--spam-red);
-  color: var(--cream);
+  color: var(--black);
   border: 2px solid transparent;
   border-radius: 3px;
   font-family: var(--mono);
