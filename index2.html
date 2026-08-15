@@ -58,21 +58,18 @@ var CURRENT_HERO = HERO_CLIPS[CURRENT_HERO_INDEX];
     CURRENT_HERO = HERO_CLIPS[index];
 
     vid.querySelector('source').src = CURRENT_HERO.video;
-    vid.load();
 
-    // If the voice audio element already exists, update it too
     var voiceLine = document.getElementById('voice-line');
     if (voiceLine) {
       voiceLine.src = CURRENT_HERO.audio;
     }
 
+    vid.load();
     vid.play().catch(function () {});
   }
 
-  // Load the randomly selected opening video
   loadHero(CURRENT_HERO_INDEX);
 
-  // Change video every 7 seconds
   setInterval(function () {
     var nextIndex = (CURRENT_HERO_INDEX + 1) % HERO_CLIPS.length;
     loadHero(nextIndex);
