@@ -87,18 +87,10 @@ var CURRENT_HERO = HERO_CLIPS[CURRENT_HERO_INDEX];
     <p class="hero-tagline">Five breakfast items. One very serious morning. Nobody makes it to lunch.</p>
 <div class="cta-row">
       <div class="select-wrap">
-        <select class="platform-select" id="utmDropdownHero" onchange="openUTMLink(this.value)">
-          <option value="">Chop Chop! Choice your poison...</option>
-          <option value="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-spotify">Spotify</option>
-          <option value="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-tunein">TuneIn</option>
-          <option value="https://www.everand.com/audiobook/1067543449/Spam-and-Eggs-A-Very-Serious-Morning?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-everand">Everand</option>
-          <option value="https://www.barnesandnoble.com/w/spam-and-eggs-arge-barn/1150907553?ean=2940205787413&utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-barnes-and-noble">Barnes and Noble</option>
-          <option value="https://www.kobo.com/sg/en/audiobook/spam-and-eggs?srsltid=AfmBOoq4gtz3ccm7_G0ovE7n1J6raLAivi0LPg5ln81gW19ZzTFlpRWP?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-kobo">Kobo</option>
-          <option value="https://play.google.com/store/audiobooks/details/Arge_Barn_Spam_and_Eggs?id=AQAAAED6qiLqyM&utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-google-play">Google Play</option>
-          <option value="https://www.amazon.com/dp/B0HDY314GP?ref_=ast_author_ofdp_rw?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-amazon">Amazon</option>
-          <option value="https://www.ibs.it/spam-eggs-audiobook-arge-barn/e/9780466071165?srsltid=AfmBOooR1dBDKYHs-jy-RNsbdK6XVhRpRr8zVDQHjfhiVJnqXdYfN0te?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-ibs">Ibs</option>
-          <option value=" https://www.lafeltrinelli.it/spam-eggs-audiobook-arge-barn/e/9780466071165?srsltid=AfmBOordpHfROK8YFigRcA0tHPkMUphEO27Fzt_TkG967jvlHJC7Y_Ky?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-feltrinelli">Feltrinelli</option>
-        </select>
+        <button type="button" class="platform-select cs-trigger" id="utmDropdownHero" data-loc="hero" aria-haspopup="listbox" aria-expanded="false">
+          <span class="cs-label">Chop Chop! Choice your poison...</span>
+        </button>
+        <ul class="platform-list cs-list" role="listbox" tabindex="-1" hidden></ul>
         <span class="select-chevron"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4"/></svg></span>
       </div>
   <!-- Voice line: click to hear whichever character's hero video is playing -->
@@ -106,14 +98,6 @@ var CURRENT_HERO = HERO_CLIPS[CURRENT_HERO_INDEX];
 <audio id="voice-line" preload="auto"></audio>
     </div>
   </div>
-    <script>
-      function openUTMLink(url) {
-        if (url) {
-          window.open(url, '_blank');
-          document.getElementById('utmDropdown').value = "";
-        }
-      }
-    </script>
 
   <div class="scroll-cue">Scroll — if you dare</div>
 </section>
@@ -310,18 +294,10 @@ var CURRENT_HERO = HERO_CLIPS[CURRENT_HERO_INDEX];
       <p class="small">Full audiobook — multi-voice, ~15 minutes</p>
      <div class="cta-row" style="margin-bottom:10px;">
       <div class="select-wrap">
-         <select class="platform-select" id="utmDropdownListen" onchange="openUTMLink(this.value)">
-          <option value="">Chop Chop! Choice your poison...</option>
-          <option value="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-spotify">Spotify</option>
-          <option value="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-tunein">TuneIn</option>
-          <option value="https://www.everand.com/audiobook/1067543449/Spam-and-Eggs-A-Very-Serious-Morning?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-everand">Everand</option>
-          <option value="https://www.barnesandnoble.com/w/spam-and-eggs-arge-barn/1150907553?ean=2940205787413&utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-barnes-and-noble">Barnes and Noble</option>
-          <option value="https://www.kobo.com/sg/en/audiobook/spam-and-eggs?srsltid=AfmBOoq4gtz3ccm7_G0ovE7n1J6raLAivi0LPg5ln81gW19ZzTFlpRWP?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-kobo">Kobo</option>
-          <option value="https://play.google.com/store/audiobooks/details/Arge_Barn_Spam_and_Eggs?id=AQAAAED6qiLqyM&utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-google-play">Google Play</option>
-          <option value="https://www.amazon.com/dp/B0HDY314GP?ref_=ast_author_ofdp_rw?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-amazon">Amazon</option>
-          <option value="https://www.ibs.it/spam-eggs-audiobook-arge-barn/e/9780466071165?srsltid=AfmBOooR1dBDKYHs-jy-RNsbdK6XVhRpRr8zVDQHjfhiVJnqXdYfN0te?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-ibs">Ibs</option>
-          <option value=" https://www.lafeltrinelli.it/spam-eggs-audiobook-arge-barn/e/9780466071165?srsltid=AfmBOordpHfROK8YFigRcA0tHPkMUphEO27Fzt_TkG967jvlHJC7Y_Ky?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-feltrinelli">Feltrinelli</option>
-        </select>
+        <button type="button" class="platform-select cs-trigger" id="utmDropdownListen" data-loc="listen" aria-haspopup="listbox" aria-expanded="false">
+          <span class="cs-label">Chop Chop! Choice your poison...</span>
+        </button>
+        <ul class="platform-list cs-list" role="listbox" tabindex="-1" hidden></ul>
         <span class="select-chevron"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4"/></svg></span>
       </div>
     </div>
@@ -444,6 +420,108 @@ var CURRENT_HERO = HERO_CLIPS[CURRENT_HERO_INDEX];
     });
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) overlay.hidden = true;
+    });
+  })();
+</script>
+
+  <!-- Platform dropdown: builds the "choose your poison" menu with per-platform icons -->
+<script>
+  (function () {
+    var FALLBACK_ICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2317130f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17L17 7M9 7h8v8'/%3E%3C/svg%3E";
+
+    // slug = simpleicons.org slug used to fetch a brand-colored SVG at render time;
+    // if a slug doesn't resolve, the icon quietly falls back to a plain link glyph.
+    var PLATFORMS = [
+      { name: "Spotify",           slug: "spotify",         color: "1DB954", base: "https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk",                                                                 key: "spotify" },
+      { name: "TuneIn",            slug: "tunein",           color: "14213D", base: "http://tun.in/pyklT",                                                                                                   key: "tunein" },
+      { name: "Everand",           slug: "everand",         color: "000000", base: "https://www.everand.com/audiobook/1067543449/Spam-and-Eggs-A-Very-Serious-Morning",                                     key: "everand" },
+      { name: "Barnes and Noble",  slug: "barnesandnoble",  color: "000000", base: "https://www.barnesandnoble.com/w/spam-and-eggs-arge-barn/1150907553?ean=2940205787413",                                 key: "barnes-and-noble" },
+      { name: "Kobo",              slug: "kobo",            color: "000000", base: "https://www.kobo.com/sg/en/audiobook/spam-and-eggs?srsltid=AfmBOoq4gtz3ccm7_G0ovE7n1J6raLAivi0LPg5ln81gW19ZzTFlpRWP",     key: "kobo" },
+      { name: "Google Play",       slug: "googleplay",      color: "414141", base: "https://play.google.com/store/audiobooks/details/Arge_Barn_Spam_and_Eggs?id=AQAAAED6qiLqyM",                             key: "google-play" },
+      { name: "Amazon",            slug: "amazon",          color: "FF9900", base: "https://www.amazon.com/dp/B0HDY314GP?ref_=ast_author_ofdp_rw",                                                            key: "amazon" },
+      { name: "Ibs",               slug: "ibs",             color: "000000", base: "https://www.ibs.it/spam-eggs-audiobook-arge-barn/e/9780466071165?srsltid=AfmBOooR1dBDKYHs-jy-RNsbdK6XVhRpRr8zVDQHjfhiVJnqXdYfN0te", key: "ibs" },
+      { name: "Feltrinelli",       slug: "feltrinelli",     color: "000000", base: "https://www.lafeltrinelli.it/spam-eggs-audiobook-arge-barn/e/9780466071165?srsltid=AfmBOordpHfROK8YFigRcA0tHPkMUphEO27Fzt_TkG967jvlHJC7Y_Ky", key: "feltrinelli" }
+    ];
+
+    function buildUrl(platform, loc) {
+      var sep = platform.base.indexOf("?") === -1 ? "?" : "&";
+      return platform.base + sep + "utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=" + loc + "-" + platform.key;
+    }
+
+    function closeDropdown(trigger, list) {
+      list.hidden = true;
+      trigger.setAttribute("aria-expanded", "false");
+    }
+
+    function openDropdown(trigger, list) {
+      document.querySelectorAll(".cs-list").forEach(function (l) {
+        if (l !== list && l.__trigger) closeDropdown(l.__trigger, l);
+      });
+      list.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+    }
+
+    document.querySelectorAll(".cs-trigger").forEach(function (trigger) {
+      var loc = trigger.getAttribute("data-loc");
+      var list = trigger.nextElementSibling;
+      list.__trigger = trigger;
+
+      PLATFORMS.forEach(function (platform) {
+        var li = document.createElement("li");
+        li.setAttribute("role", "option");
+        li.tabIndex = -1;
+
+        var img = document.createElement("img");
+        img.className = "opt-icon";
+        img.alt = "";
+        img.loading = "lazy";
+        img.src = "https://cdn.simpleicons.org/" + platform.slug + "/" + platform.color;
+        img.onerror = function () { this.onerror = null; this.src = FALLBACK_ICON; };
+        li.appendChild(img);
+
+        var span = document.createElement("span");
+        span.textContent = platform.name;
+        li.appendChild(span);
+
+        li.addEventListener("click", function () {
+          window.open(buildUrl(platform, loc), "_blank");
+          closeDropdown(trigger, list);
+        });
+
+        list.appendChild(li);
+      });
+
+      trigger.addEventListener("click", function () {
+        if (list.hidden) {
+          openDropdown(trigger, list);
+        } else {
+          closeDropdown(trigger, list);
+        }
+      });
+
+      list.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeDropdown(trigger, list);
+          trigger.focus();
+        }
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll(".cs-trigger").forEach(function (trigger) {
+        var list = trigger.nextElementSibling;
+        if (!list.hidden && !trigger.contains(e.target) && !list.contains(e.target)) {
+          closeDropdown(trigger, list);
+        }
+      });
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        document.querySelectorAll(".cs-trigger").forEach(function (trigger) {
+          closeDropdown(trigger, trigger.nextElementSibling);
+        });
+      }
     });
   })();
 </script>
