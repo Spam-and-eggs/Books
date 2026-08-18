@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192x192.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-512x512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style2.css">
 </head>
 <body>
 
@@ -58,22 +58,25 @@ var CURRENT_HERO = HERO_CLIPS[CURRENT_HERO_INDEX];
     CURRENT_HERO = HERO_CLIPS[index];
 
     vid.querySelector('source').src = CURRENT_HERO.video;
+    vid.load();
 
+    // If the voice audio element already exists, update it too
     var voiceLine = document.getElementById('voice-line');
     if (voiceLine) {
       voiceLine.src = CURRENT_HERO.audio;
     }
 
-    vid.load();
     vid.play().catch(function () {});
   }
 
+  // Load the randomly selected opening video
   loadHero(CURRENT_HERO_INDEX);
 
+  // Change video every 7 seconds
   setInterval(function () {
     var nextIndex = (CURRENT_HERO_INDEX + 1) % HERO_CLIPS.length;
     loadHero(nextIndex);
-  }, 10000);
+  }, 7000);
 })();
 </script>
   <div class="hero-content">
@@ -84,14 +87,10 @@ var CURRENT_HERO = HERO_CLIPS[CURRENT_HERO_INDEX];
     <p class="hero-tagline">Five breakfast items. One very serious morning. Nobody makes it to lunch.</p>
 <div class="cta-row">
       <div class="select-wrap">
-        <select class="platform-select" id="utmDropdown" onchange="openUTMLink(this.value)">
-          <option value="">Chop Chop! Choice your poison...</option>
-          <option value="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-spotify">Spotify</option>
-          <option value="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-tunein">TuneIn</option>
-          <option value="https://www.everand.com/audiobook/1067543449/Spam-and-Eggs-A-Very-Serious-Morning?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-everand">Everand</option>
-          <option value="https://www.barnesandnoble.com/w/spam-and-eggs-arge-barn/1150907553?ean=2940205787413&utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-barnesandnoble">Barnes and Noble</option>
-          <option value="https://www.kobo.com/sg/en/audiobook/spam-and-eggs?srsltid=AfmBOoq4gtz3ccm7_G0ovE7n1J6raLAivi0LPg5ln81gW19ZzTFlpRWP?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-kobo">Kobo</option>
-        </select>
+        <button type="button" class="platform-select cs-trigger" id="utmDropdownHero" data-loc="hero" aria-haspopup="listbox" aria-expanded="false">
+          <span class="cs-label">Chop Chop! Choice your poison...</span>
+        </button>
+        <ul class="platform-list cs-list" role="listbox" tabindex="-1" hidden></ul>
         <span class="select-chevron"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4"/></svg></span>
       </div>
   <!-- Voice line: click to hear whichever character's hero video is playing -->
@@ -99,14 +98,6 @@ var CURRENT_HERO = HERO_CLIPS[CURRENT_HERO_INDEX];
 <audio id="voice-line" preload="auto"></audio>
     </div>
   </div>
-    <script>
-      function openUTMLink(url) {
-        if (url) {
-          window.open(url, '_blank');
-          document.getElementById('utmDropdown').value = "";
-        }
-      }
-    </script>
 
   <div class="scroll-cue">Scroll — if you dare</div>
 </section>
@@ -303,14 +294,10 @@ var CURRENT_HERO = HERO_CLIPS[CURRENT_HERO_INDEX];
       <p class="small">Full audiobook — multi-voice, ~15 minutes</p>
      <div class="cta-row" style="margin-bottom:10px;">
       <div class="select-wrap">
-         <select class="platform-select" id="utmDropdown" onchange="openUTMLink(this.value)">
-          <option value="">Chop Chop! Choice your poison...</option>
-          <option value="https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-spotify">Spotify</option>
-          <option value="http://tun.in/pyklT?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=hero-tunein">TuneIn</option>
-          <option value="https://www.everand.com/audiobook/1067543449/Spam-and-Eggs-A-Very-Serious-Morning?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-everand">Everand</option>
-          <option value="https://www.barnesandnoble.com/w/spam-and-eggs-arge-barn/1150907553?ean=2940205787413&utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-barnesandnoble">Barnes and Noble</option>
-          <option value="https://www.kobo.com/sg/en/audiobook/spam-and-eggs?srsltid=AfmBOoq4gtz3ccm7_G0ovE7n1J6raLAivi0LPg5ln81gW19ZzTFlpRWP?utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=listen-kobo">Kobo</option>
-        </select>
+        <button type="button" class="platform-select cs-trigger" id="utmDropdownListen" data-loc="listen" aria-haspopup="listbox" aria-expanded="false">
+          <span class="cs-label">Chop Chop! Choice your poison...</span>
+        </button>
+        <ul class="platform-list cs-list" role="listbox" tabindex="-1" hidden></ul>
         <span class="select-chevron"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4"/></svg></span>
       </div>
     </div>
@@ -433,6 +420,111 @@ var CURRENT_HERO = HERO_CLIPS[CURRENT_HERO_INDEX];
     });
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) overlay.hidden = true;
+    });
+  })();
+</script>
+
+  <!-- Platform dropdown: builds the "choose your poison" menu with per-platform icons -->
+<script>
+  (function () {
+    // Inline line-icons (feather-style, matches the chevron already used on this site).
+    // No external requests — nothing for an ad blocker or offline network to strip out.
+    var ICON_PATHS = {
+      wave:  '<path d="M4 10v4M8 6v12M12 3v18M16 6v12M20 10v4"/>',
+      radio: '<circle cx="12" cy="17" r="1.3" fill="currentColor" stroke="none"/><path d="M8.5 13.8a5 5 0 017 0M5.3 10.6a9.2 9.2 0 0113.4 0"/>',
+      book:  '<path d="M12 6.5c-2.2-1-4.8-1.3-8-1v13c3.2-.3 5.8 0 8 1 2.2-1 4.8-1.3 8-1v-13c-3.2-.3-5.8 0-8 1zM12 6.5v13"/>',
+      bag:   '<path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/>',
+      play:  '<rect x="4" y="4" width="16" height="16" rx="4"/><path d="M10 8.3l6 3.7-6 3.7V8.3z" fill="currentColor" stroke="none"/>'
+    };
+
+    var PLATFORMS = [
+      { name: "Spotify",           icon: "wave",  base: "https://open.spotify.com/show/67nCnRK3Gd2xtgFxg7SGTk",                                                                 key: "spotify" },
+      { name: "TuneIn",            icon: "radio", base: "http://tun.in/pyklT",                                                                                                   key: "tunein" },
+      { name: "Everand",           icon: "book",  base: "https://www.everand.com/audiobook/1067543449/Spam-and-Eggs-A-Very-Serious-Morning",                                     key: "everand" },
+      { name: "Barnes and Noble",  icon: "bag",   base: "https://www.barnesandnoble.com/w/spam-and-eggs-arge-barn/1150907553?ean=2940205787413",                                 key: "barnes-and-noble" },
+      { name: "Kobo",              icon: "book",  base: "https://www.kobo.com/sg/en/audiobook/spam-and-eggs?srsltid=AfmBOoq4gtz3ccm7_G0ovE7n1J6raLAivi0LPg5ln81gW19ZzTFlpRWP",     key: "kobo" },
+      { name: "Google Play",       icon: "play",  base: "https://play.google.com/store/audiobooks/details/Arge_Barn_Spam_and_Eggs?id=AQAAAED6qiLqyM",                             key: "google-play" },
+      { name: "Amazon",            icon: "bag",   base: "https://www.amazon.com/dp/B0HDY314GP?ref_=ast_author_ofdp_rw",                                                            key: "amazon" },
+      { name: "Ibs",               icon: "book",  base: "https://www.ibs.it/spam-eggs-audiobook-arge-barn/e/9780466071165?srsltid=AfmBOooR1dBDKYHs-jy-RNsbdK6XVhRpRr8zVDQHjfhiVJnqXdYfN0te", key: "ibs" },
+      { name: "Feltrinelli",       icon: "book",  base: "https://www.lafeltrinelli.it/spam-eggs-audiobook-arge-barn/e/9780466071165?srsltid=AfmBOordpHfROK8YFigRcA0tHPkMUphEO27Fzt_TkG967jvlHJC7Y_Ky", key: "feltrinelli" }
+    ];
+
+    function buildUrl(platform, loc) {
+      var sep = platform.base.indexOf("?") === -1 ? "?" : "&";
+      return platform.base + sep + "utm_source=website&utm_medium=button&utm_campaign=spam_and_eggs&utm_content=" + loc + "-" + platform.key;
+    }
+
+    function closeDropdown(trigger, list) {
+      list.hidden = true;
+      trigger.setAttribute("aria-expanded", "false");
+    }
+
+    function openDropdown(trigger, list) {
+      document.querySelectorAll(".cs-list").forEach(function (l) {
+        if (l !== list && l.__trigger) closeDropdown(l.__trigger, l);
+      });
+      list.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+    }
+
+    document.querySelectorAll(".cs-trigger").forEach(function (trigger) {
+      var loc = trigger.getAttribute("data-loc");
+      var list = trigger.nextElementSibling;
+      list.__trigger = trigger;
+
+      PLATFORMS.forEach(function (platform) {
+        var li = document.createElement("li");
+        li.setAttribute("role", "option");
+        li.tabIndex = -1;
+
+        var iconWrap = document.createElement("span");
+        iconWrap.className = "opt-icon";
+        iconWrap.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICON_PATHS[platform.icon] || "") + '</svg>';
+        li.appendChild(iconWrap);
+
+        var span = document.createElement("span");
+        span.textContent = platform.name;
+        li.appendChild(span);
+
+        li.addEventListener("click", function () {
+          window.open(buildUrl(platform, loc), "_blank");
+          closeDropdown(trigger, list);
+        });
+
+        list.appendChild(li);
+      });
+
+      trigger.addEventListener("click", function () {
+        if (list.hidden) {
+          openDropdown(trigger, list);
+        } else {
+          closeDropdown(trigger, list);
+        }
+      });
+
+      list.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeDropdown(trigger, list);
+          trigger.focus();
+        }
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll(".cs-trigger").forEach(function (trigger) {
+        var list = trigger.nextElementSibling;
+        if (!list.hidden && !trigger.contains(e.target) && !list.contains(e.target)) {
+          closeDropdown(trigger, list);
+        }
+      });
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        document.querySelectorAll(".cs-trigger").forEach(function (trigger) {
+          closeDropdown(trigger, trigger.nextElementSibling);
+        });
+      }
     });
   })();
 </script>
